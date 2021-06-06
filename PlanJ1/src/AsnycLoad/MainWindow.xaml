@@ -1,0 +1,45 @@
+﻿<Window
+    x:Class="AsnycLoad.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:AsnycLoad.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <HierarchicalDataTemplate x:Key="HierarchicalDataTemplate" ItemsSource="{Binding Nodes}">
+            <TextBlock x:Name="TbContent" Text="{Binding Path=Name}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseUp">
+                        <i:InvokeCommandAction Command="{Binding DataContext.LoadNodeDataCmd, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type TreeView}, Mode=FindAncestor}}" CommandParameter="{Binding}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBlock>
+        </HierarchicalDataTemplate>
+        <Style x:Key="TreeItemDisk" TargetType="{x:Type TreeViewItem}">
+            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+            <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TreeView
+            ItemContainerStyle="{StaticResource TreeItemDisk}"
+            ItemTemplate="{StaticResource HierarchicalDataTemplate}"
+            ItemsSource="{Binding Directories}"
+            ScrollViewer.IsDeferredScrollingEnabled="True"
+            VirtualizingStackPanel.CacheLength="10,100"
+            VirtualizingStackPanel.CacheLengthUnit="Item"
+            VirtualizingStackPanel.IsVirtualizing="True"
+            VirtualizingStackPanel.VirtualizationMode="Recycling" />
+    </Grid>
+</Window>

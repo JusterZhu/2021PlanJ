@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8Yo3+O1zBDCY9Q9wj3RJ/DLpYayMhMJRPNiYZzGFkvIQtOdJXd4QjoiQ0rIWvtMmzvg7kp2Cj1K9+fQ2YxQIBg==",
+  "success": true,
+  "projectFilePath": "E:\\博客相关资料\\文章\\2021年源计划（更新中）\\PlanJ1\\src\\AsnycLoad\\AsnycLoad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+  ],
+  "logs": []
+}
