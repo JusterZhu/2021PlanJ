@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="Tips.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Tips"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    AllowsTransparency="True"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid>
+        <Button
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Click="Button_Click"
+            Content="Run" />
+        <StackPanel
+            x:Name="panelWorkspace"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Button
+                x:Name="BtnCreateProject1"
+                Width="100"
+                Height="25"
+                Margin="10"
+                Content="btn1" />
+            <Button
+                x:Name="BtnCreateProject2"
+                Width="100"
+                Height="25"
+                Margin="10"
+                Content="btn2" />
+            <Button
+                x:Name="BtnCreateProject3"
+                Width="100"
+                Height="25"
+                Margin="10"
+                Content="btn3" />
+            <Button
+                x:Name="BtnCreateProject4"
+                Width="100"
+                Height="25"
+                Margin="10"
+                Content="btn4" />
+        </StackPanel>
+    </Grid>
+</Window>
